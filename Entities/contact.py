@@ -9,3 +9,6 @@ class Contact:
         self.first_name=new_firstname
         self.last_name=new_lastname
         self.phone_number=new_phone
+
+    def object_to_string(self):
+        return f"{self.id},{self.first_name},{self.last_name},{self.phone_number}"

@@ -29,3 +29,12 @@ class Phonebook:
         for contact in self.show_contact_list:
             if contact.id==id:
                 return contact
+
+
+    def conver_to_string(self):
+        converted_contact=""
+        for contact in self.contact_list:
+            converted_contact += contact.object_to_string()
+            if contact.id!=self.contact_list[-1].id:
+                converted_contact+="\n"
+        return converted_contact

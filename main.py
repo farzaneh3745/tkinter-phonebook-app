@@ -1,12 +1,10 @@
 from tkinter import Tk,Label,Entry,Button
 from tkinter.ttk import Treeview
 from Entities.phonebook import Phonebook
+from WorkingTxtFiles.working_file import load_from_file,save_to_file
 
-phonebook=Phonebook([])
-phonebook.create("Sara","Jackson",phone="09129083490")
-phonebook.create("Maria","White",phone="09111082200")
-phonebook.create("Liana","Wilson",phone="09102081190")
-phonebook.create("Mark","Smith",phone="09142080090")
+data_list=load_from_file()
+phonebook=Phonebook(data_list)
 
 window=Tk()
 window.title("Phone Book Application")
@@ -67,6 +65,8 @@ def show_contact_form(update_id=None):
         else:
             phonebook.create(firstname,lastname,phone)
 
+        string_contact_list = phonebook.conver_to_string()
+        save_to_file(string_contact_list)
         load_treeview()
         contact_form.destroy()
 
@@ -89,6 +89,8 @@ update_button.grid(row=1,column=2,padx=(0,10),pady=(0,10),sticky="ew")
 def delete_button_clicked():
     row_selected=int(phonebook_treeview.selection()[0])
     phonebook.delete(row_selected)
+    string_contact_list=phonebook.conver_to_string()
+    save_to_file(string_contact_list)
     load_treeview()
 
 delete_button=Button(window,text="Delete",command=delete_button_clicked)
