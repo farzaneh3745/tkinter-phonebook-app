@@ -23,14 +23,7 @@ A simple desktop phonebook application built using Python and Tkinter with an ob
 │   └── phonebook.py    # Contains the Phonebook and Contact classes  
 ├── main.py              # GUI application logic using Tkinter
 
-## Getting Started
-
-1. Clone the repository
-
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
-```
 
 2. Run the application (make sure Python is installed)
 
