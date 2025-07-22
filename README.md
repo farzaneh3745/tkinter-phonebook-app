@@ -24,9 +24,5 @@ A simple desktop phonebook application built using Python and Tkinter with an ob
 ├── main.py              # GUI application logic using Tkinter
 
 ```bash
-
-2. Run the application (make sure Python is installed)
-
-```bash
 python main.py
 ```
